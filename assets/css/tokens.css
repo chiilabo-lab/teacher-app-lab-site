@@ -1,0 +1,35 @@
+:root {
+  color-scheme: light;
+  --color-sky-50: #f3fbfe;
+  --color-sky-100: #e2f5fc;
+  --color-sky-200: #ccecf8;
+  --color-sky-400: #77c7e8;
+  --color-sky-600: #257fa8;
+  --color-sky-700: #1d6586;
+  --color-yellow-100: #fff5c7;
+  --color-yellow-300: #f5d66f;
+  --color-cream: #fffaf0;
+  --color-white: #ffffff;
+  --color-ink: #26343b;
+  --color-text: #3f5059;
+  --color-muted: #687981;
+  --color-line: #d7e8ee;
+  --color-shadow: rgba(48, 87, 104, 0.11);
+  --font-sans: "BIZ UDPGothic", "Yu Gothic UI", "Yu Gothic", "Meiryo", system-ui, sans-serif;
+  --font-rounded: "BIZ UDPGothic", "Yu Gothic UI", "Yu Gothic", "Meiryo", system-ui, sans-serif;
+  --size-content: 1120px;
+  --radius-sm: 10px;
+  --radius-md: 18px;
+  --radius-lg: 28px;
+  --radius-pill: 999px;
+  --shadow-card: 0 14px 35px var(--color-shadow);
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4.5rem;
+}
+

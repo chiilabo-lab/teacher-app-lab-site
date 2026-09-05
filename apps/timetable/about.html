@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="時間割アプリの目的、現在の状態、安全な試験利用について紹介します。">
+  <meta name="theme-color" content="#ccecf8">
+  <title>時間割アプリについて｜先生のちいさなアプリ実験室</title>
+  <link rel="stylesheet" href="../../assets/css/site.css?v=20260802-pc-mode-header-readable">
+  <script src="../../assets/js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">本文へ移動</a>
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="../../index.html"><img class="brand__image" src="../../assets/images/panda-lab.png" alt=""><span class="brand__text"><span class="brand__sub">TEACHER'S SMALL LAB</span><span class="brand__name">先生のちいさなアプリ実験室</span><span class="brand__tagline">教室から、ひとつずつ。</span></span></a>
+      <button class="nav-toggle" type="button" aria-controls="main-navigation" aria-expanded="false" data-nav-toggle>メニュー</button>
+      <nav class="site-nav" id="main-navigation" aria-label="メインナビゲーション" data-navigation data-open="false">
+        <a href="../../index.html">ホーム</a><a href="../index.html" aria-current="page">アプリ</a><a href="../../materials/index.html">教材</a><a href="../../notes/index.html">ノート</a><a href="../../essays/index.html">エッセイ</a><a href="../../labs/index.html">実験室</a><a href="../../profile/index.html">プロフィール</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="container breadcrumbs"><ol><li><a href="../../index.html">ホーム</a></li><li><a href="../index.html">アプリ</a></li><li aria-current="page">時間割アプリ</li></ol></div>
+    <section class="page-hero app-detail-hero">
+      <div class="container app-detail-hero__grid">
+        <div class="flow">
+          <p class="eyebrow">Small app / Prototype</p>
+          <div class="status-row"><span class="experiment-status experiment-status--prototype">試作中</span><span class="version-badge">保存なし試験掲載版</span></div>
+          <h1>時間割アプリ</h1>
+          <p>時間割や予定を見やすく整理し、週づくりと印刷用紙面の作成を支える試作品です。元アプリ・安全な試験掲載版ともに、現在も開発と確認を重ねています。</p>
+          <p>この掲載版では学校固有の内容を取り除き、主な編集・出力機能を保存なしで試せる形にしています。</p>
+          <div class="app-detail-actions"><a class="button button--primary" href="index.html">使ってみる</a><a class="button" href="../index.html">アプリ一覧へ戻る</a></div>
+        </div>
+        <div class="app-detail-visual app-detail-visual--timetable">
+          <span aria-hidden="true">時間割</span>
+          <strong>保存なしで<br>試せます</strong>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--soft" aria-labelledby="difference-title">
+      <div class="container">
+        <div class="section-heading">
+          <div class="section-heading__copy">
+            <p class="eyebrow">Original app / Safe preview</p>
+            <h2 id="difference-title">元アプリと、安全な試験掲載版の違い</h2>
+            <p>「保存なし」は機能不足ではなく、学校や個人に関わる情報を扱わずに試してもらうための、意図的な制限です。</p>
+          </div>
+        </div>
+        <div class="version-difference-grid">
+          <article class="app-detail-panel">
+            <p class="function-state-label">元アプリ</p>
+            <h3>データも活用する週づくりを改善中</h3>
+            <p>教育課程データ、年間行事予定、過去の時間割、特別教室の情報などを読み込み、週の時間割づくりに活用する機能があります。自動で完成させるのではなく、先生が確認して手直しするためのたたき台を作る考え方です。</p>
+          </article>
+          <article class="app-detail-panel app-detail-panel--yellow">
+            <p class="function-state-label">安全な試験掲載版</p>
+            <h3>空の内容で、編集と出力を試す版</h3>
+            <p>学校名、学級名、実際の時間割、予定、連絡文、資料を含めず、保存・読込・自動作成を停止しています。元アプリは変更せず、コピーした掲載版だけを安全用に調整しています。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="function-title">
+      <div class="container">
+        <div class="section-heading">
+          <div class="section-heading__copy">
+            <p class="eyebrow">Function status</p>
+            <h2 id="function-title">機能の現在地</h2>
+            <p>元アプリのコードを確認し、現時点の状態を3つに分けています。改善中のものを、完成済みの機能としては扱っていません。</p>
+          </div>
+        </div>
+        <div class="function-state-grid">
+          <article class="app-detail-panel function-state-card function-state-card--available">
+            <p class="function-state-label">A．この版で現在試せる</p>
+            <h3>編集・紙面づくり・出力</h3>
+            <ul class="app-detail-list">
+              <li>5日間／6日間の編集と、前週／次週への移動</li>
+              <li>予定、持ち物、朝の時間、下校時刻、連絡欄の編集</li>
+              <li>書体、文字サイズ、色、太字、ふりがな、背景色、行間の調整</li>
+              <li>画像、定番イラスト、吹き出しの挿入と大きさ調整</li>
+              <li>行の追加、帯表示、表面／裏面の編集</li>
+              <li>元に戻す／やり直し、Word・PDF出力、印刷</li>
+            </ul>
+          </article>
+          <article class="app-detail-panel function-state-card function-state-card--stopped">
+            <p class="function-state-label">B．掲載版では停止</p>
+            <h3>保存・データ読込・自動作成</h3>
+            <ul class="app-detail-list">
+              <li>端末への自動保存、週保存、JSON保存／読込</li>
+              <li>教育課程データ、年間行事予定、過去の時間割、特別教室情報の読込</li>
+              <li>単元候補、年間予定、過去の時間割候補の反映</li>
+              <li>読込データを組み合わせる「おまかせ週作成」</li>
+              <li>裏面へのWordファイル読込</li>
+            </ul>
+          </article>
+          <article class="app-detail-panel function-state-card function-state-card--developing">
+            <p class="function-state-label">C．開発・改善中</p>
+            <h3>読込対応と、たたき台の精度</h3>
+            <ul class="app-detail-list">
+              <li>教育課程はJSON・CSV・TXTの候補データ読込に対応していますが、PDF本文の自動解析は未対応です。</li>
+              <li>年間行事予定はXLSX・JSONに対応していますが、表の構成によっては行事を認識できないため、読込対応を改善中です。</li>
+              <li>おまかせ週作成は、過去の時間割・行事・単元候補を組み合わせてたたき台を作ります。結果の確認と手直しが必要です。</li>
+              <li>特別教室の調整はJSONの指定枠をもとに入れ替えますが、移動先が見つからない場合があり、精度を改善中です。</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--soft" aria-label="安全な利用とスマートフォン表示">
+      <div class="container app-detail-grid">
+        <article class="app-detail-panel app-detail-panel--yellow">
+          <h2>安全な試験利用</h2>
+          <p>入力内容は端末にも外部にも保存・送信されません。ページを閉じたり再読み込みしたりすると消えます。</p>
+          <p><strong>児童名、学校名、学級名など、個人や学校を特定できる情報は入力しないでください。</strong></p>
+        </article>
+        <article class="app-detail-panel">
+          <h2>スマートフォンで使うとき</h2>
+          <p>操作ボタンは画面幅に合わせて並び、時間割用紙は横に動かして確認できます。入力や簡単な編集はスマートフォンでも行えますが、表全体の調整と印刷確認は画面の広いパソコンが向いています。</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__grid">
+        <div class="flow"><h2>先生のちいさなアプリ実験室</h2><p class="site-footer__brand-copy">教室から、ひとつずつ。</p><p>教室と職員室から生まれたアイデアを、ちいさく試し、育てています。</p></div>
+        <div><h3>5つの入口</h3><ul class="site-footer__links"><li><a href="../../apps/index.html">アプリ</a></li><li><a href="../../materials/index.html">教材</a></li><li><a href="../../notes/index.html">ノート</a></li><li><a href="../../essays/index.html">エッセイ</a></li><li><a href="../../labs/index.html">実験室</a></li></ul></div>
+        <div><h3>ご案内</h3><ul class="site-footer__links"><li><a href="../../profile/index.html">プロフィール</a></li><li><a href="../../contact/index.html">お問い合わせ</a></li><li><a href="../../privacy/index.html">プライバシー</a></li></ul></div>
+      </div>
+      <p class="site-footer__bottom">© <span data-current-year>2026</span> 先生のちいさなアプリ実験室　※現在は試作公開中です。</p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="授業や先生の仕事に使える、小さな教育アプリの一覧です。">
+  <meta name="theme-color" content="#ccecf8">
+  <title>ちいラボアプリ｜先生のちいさなアプリ実験室</title>
+  <link rel="stylesheet" href="../assets/css/site.css?v=20260802-pc-mode-header-readable">
+  <script src="../assets/js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">本文へ移動</a>
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="../index.html"><img class="brand__image" src="../assets/images/panda-lab.png" alt=""><span class="brand__text"><span class="brand__sub">TEACHER'S SMALL LAB</span><span class="brand__name">先生のちいさなアプリ実験室</span><span class="brand__tagline">教室から、ひとつずつ。</span></span></a>
+      <button class="nav-toggle" type="button" aria-controls="main-navigation" aria-expanded="false" data-nav-toggle>メニュー</button>
+      <nav class="site-nav" id="main-navigation" aria-label="メインナビゲーション" data-navigation data-open="false">
+        <a href="../index.html">ホーム</a><a href="index.html" aria-current="page">アプリ</a><a href="../materials/index.html">教材</a><a href="../notes/index.html">ノート</a><a href="../essays/index.html">エッセイ</a><a href="../labs/index.html">実験室</a><a href="../profile/index.html">プロフィール</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="container breadcrumbs"><ol><li><a href="../index.html">ホーム</a></li><li aria-current="page">ちいラボアプリ</li></ol></div>
+    <section class="page-hero">
+      <div class="container page-hero__inner">
+        <div class="page-hero__copy flow">
+          <p class="eyebrow">先生の毎日を支える道具</p>
+          <h1>ちいラボアプリ</h1>
+          <p>教室で「あったらいいな」と思ったものを、小さな道具にしています。難しい説明を読まなくても、すぐ試せることを大切にします。</p>
+        </div>
+        <div class="page-hero__mark page-hero__mark--word" aria-hidden="true">アプリ</div>
+      </div>
+    </section>
+
+    <section class="section section--soft" aria-labelledby="app-list-title">
+      <div class="container">
+        <div class="section-heading">
+          <div class="section-heading__copy">
+            <h2 id="app-list-title">アプリ一覧</h2>
+            <p>ボタンで目的に合うアプリを絞り込めます。</p>
+          </div>
+        </div>
+        <div class="filter-bar" role="group" aria-label="アプリの種類で絞り込む">
+          <button class="filter-button" type="button" aria-pressed="true" data-filter-value="all">すべて</button>
+          <button class="filter-button" type="button" aria-pressed="false" data-filter-value="lesson">授業で使う</button>
+          <button class="filter-button" type="button" aria-pressed="false" data-filter-value="teacher">先生の仕事</button>
+          <button class="filter-button" type="button" aria-pressed="false" data-filter-value="create">作成ツール</button>
+        </div>
+        <div class="card-grid card-grid--two app-list-grid">
+          <article class="card app-listing-card" data-filter-item="lesson">
+            <div class="app-preview app-preview--kabu" aria-label="おおきなかぶアプリのスクリーンショット掲載位置">
+              <img src="../assets/images/apps/ookinakabu-preview.png" alt="おおきなかぶアプリの画面">
+            </div>
+            <div class="card__body">
+              <div class="status-row"><span class="experiment-status experiment-status--prototype">試作中</span><span class="version-badge">サイト内試験掲載</span></div>
+              <h3>おおきなかぶアプリ</h3>
+              <p class="card__description">物語「おおきなかぶ」に登場する人物や動物を、かぶの近くから引っ張る順番に並べ、音声と答え合わせで確認する試作品です。</p>
+              <dl class="app-card-facts">
+                <div><dt>対象</dt><dd>小学校1年生・国語</dd></div>
+                <div><dt>状態</dt><dd>試作中</dd></div>
+              </dl>
+              <ul class="tag-list"><li class="tag">国語</li><li class="tag">1年生</li><li class="tag">並べ替え</li></ul>
+              <div class="card__actions">
+                <a class="button button--primary" href="ookinakabu/index.html">使ってみる</a>
+                <a class="button" href="ookinakabu/about.html">詳しく見る</a>
+              </div>
+            </div>
+          </article>
+          <article class="card app-listing-card" data-filter-item="teacher">
+            <div class="app-preview app-preview--timetable" aria-label="時間割アプリのスクリーンショット掲載位置">
+              <img src="../assets/images/apps/timetable-preview-v2.png?v=20260811-current" alt="時間割アプリの現在の画面">
+            </div>
+            <div class="card__body">
+              <div class="status-row"><span class="experiment-status experiment-status--prototype">試作中</span><span class="version-badge">保存なし試験掲載版</span></div>
+              <h3>時間割アプリ</h3>
+              <p class="card__description">時間割、予定、持ち物、連絡欄などをまとめて編集し、Word・PDF出力や印刷ができる試作品です。</p>
+              <p class="app-card-note">掲載版では一部機能を停止。元アプリではデータ活用機能も改善中です。</p>
+              <dl class="app-card-facts">
+                <div><dt>対象</dt><dd>小学校教員</dd></div>
+                <div><dt>状態</dt><dd>試作中</dd></div>
+              </dl>
+              <ul class="tag-list"><li class="tag">先生の仕事</li><li class="tag">時間割</li><li class="tag">連絡</li></ul>
+              <div class="card__actions">
+                <a class="button button--primary" href="timetable/index.html">使ってみる</a>
+                <a class="button" href="timetable/about.html">詳しく見る</a>
+              </div>
+            </div>
+          </article>
+          <article class="card" data-filter-item="create teacher">
+            <div class="card__visual card__visual--cream card__visual--readable-label">WORK<br>SHEET</div>
+            <div class="card__body">
+              <div class="card__meta"><span>公開予定</span><span>最終更新 —</span></div>
+              <h3>ワークシート作成</h3>
+              <p class="card__description">必要な項目を選び、授業に合わせたシンプルなワークシートを作ります。</p>
+              <ul class="tag-list"><li class="tag">教材作成</li><li class="tag">印刷</li></ul>
+              <div class="card__action"><span class="button" aria-disabled="true">実験中</span></div>
+            </div>
+          </article>
+          <article class="card" data-filter-item="create lesson">
+            <div class="card__visual card__visual--readable-label">観察カード<br>メーカー</div>
+            <div class="card__body">
+              <div class="card__meta"><span>公開予定</span><span>最終更新 —</span></div>
+              <h3>観察カード作成</h3>
+              <p class="card__description">植物や生き物の観察に使えるカードを、学年に合わせて整えます。</p>
+              <ul class="tag-list"><li class="tag">生活科</li><li class="tag">観察</li><li class="tag">教材作成</li></ul>
+              <div class="card__action"><span class="button" aria-disabled="true">実験中</span></div>
+            </div>
+          </article>
+        </div>
+        <p class="empty-message" data-empty-message hidden>この種類のアプリは、まだ実験中です。</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__grid">
+        <div class="flow"><h2>先生のちいさなアプリ実験室</h2><p class="site-footer__brand-copy">教室から、ひとつずつ。</p><p>教室と職員室から生まれたアイデアを、ちいさく試し、育てています。</p></div>
+        <div><h3>5つの入口</h3><ul class="site-footer__links"><li><a href="../apps/index.html">アプリ</a></li><li><a href="../materials/index.html">教材</a></li><li><a href="../notes/index.html">ノート</a></li><li><a href="../essays/index.html">エッセイ</a></li><li><a href="../labs/index.html">実験室</a></li></ul></div>
+        <div><h3>ご案内</h3><ul class="site-footer__links"><li><a href="../profile/index.html">プロフィール</a></li><li><a href="../contact/index.html">お問い合わせ</a></li><li><a href="../privacy/index.html">プライバシー</a></li></ul></div>
+      </div>
+      <p class="site-footer__bottom">© <span data-current-year>2026</span> 先生のちいさなアプリ実験室　※現在は試作公開中です。</p>
+    </div>
+  </footer>
+</body>
+</html>

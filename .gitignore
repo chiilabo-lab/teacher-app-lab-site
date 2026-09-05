@@ -1,0 +1,31 @@
+# 公開しない内部資料
+docs/
+review/
+tools/
+prototypes/
+Word原本/
+
+# Word・表計算・PDFの作業用原本
+*.doc
+*.docx
+*.docm
+*.xls
+*.xlsx
+*.xlsm
+*.pdf
+*.ppt
+*.pptx
+*.pptm
+*.zip
+
+# 秘密情報・ローカル設定
+.env
+.env.*
+!.env.example
+
+# 一時ファイル・OS固有ファイル
+tmp/
+temp/
+*.tmp
+Thumbs.db
+.DS_Store

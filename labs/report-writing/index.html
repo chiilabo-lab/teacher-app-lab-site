@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="所見づくりの困りごとから、先生が子どもの姿を振り返り、言葉を選ぶ時間を支える方法を考える非公開の試作実験室です。">
+  <meta name="theme-color" content="#ccecf8">
+  <title>所見づくり実験室｜先生のちいさなアプリ実験室</title>
+  <link rel="stylesheet" href="../../assets/css/site.css?v=20260802-pc-mode-header-readable">
+  <script src="../../assets/js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">本文へ移動</a>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="../../index.html" aria-label="先生のちいさなアプリ実験室 ホーム">
+        <img class="brand__image" src="../../assets/images/panda-lab.png" alt="">
+        <span class="brand__text"><span class="brand__sub">TEACHER'S SMALL LAB</span><span class="brand__name">先生のちいさなアプリ実験室</span><span class="brand__tagline">教室から、ひとつずつ。</span></span>
+      </a>
+      <button class="nav-toggle" type="button" aria-controls="main-navigation" aria-expanded="false" data-nav-toggle>メニュー</button>
+      <nav class="site-nav" id="main-navigation" aria-label="メインナビゲーション" data-navigation data-open="false">
+        <a href="../../index.html">ホーム</a>
+        <a href="../../apps/index.html">アプリ</a>
+        <a href="../../materials/index.html">教材</a>
+        <a href="../../notes/index.html">ノート</a>
+        <a href="../../essays/index.html">エッセイ</a>
+        <a href="../index.html" aria-current="page">実験室</a>
+        <a href="../../profile/index.html">プロフィール</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="container breadcrumbs">
+      <ol><li><a href="../../index.html">ホーム</a></li><li><a href="../index.html">実験室一覧</a></li><li aria-current="page">所見づくり実験室</li></ol>
+    </div>
+
+    <section class="lab-hero">
+      <div class="container lab-hero__grid">
+        <div class="lab-hero__copy flow">
+          <div class="status-row">
+            <span class="experiment-status experiment-status--prototype">試作中</span>
+            <span class="version-badge">Ver.0.1</span>
+          </div>
+          <p class="eyebrow">Report-writing laboratory</p>
+          <h1>所見づくり実験室</h1>
+          <p>所見を自動で完成させるためではなく、先生が子どもの姿を振り返り、自分の言葉を選ぶ時間を支える方法を考える実験です。</p>
+          <div class="lab-hero__actions">
+            <a class="button button--primary" href="#journey">実験の流れを見る <span aria-hidden="true">↓</span></a>
+            <span class="participation-pending">参加フォーム準備中</span>
+          </div>
+        </div>
+
+        <aside class="lab-hero__summary" aria-label="所見づくり実験室の現在の情報">
+          <dl>
+            <div><dt>現在地</dt><dd>考え方と安全条件の整理</dd></div>
+            <div><dt>公開状態</dt><dd>非公開の試作段階</dd></div>
+            <div><dt>試作品</dt><dd>画面・機能ともに準備中</dd></div>
+            <div><dt>利用者テスト</dt><dd>未実施</dd></div>
+            <div><dt>最終更新</dt><dd><time datetime="2026-07-31">2026.07.31</time></dd></div>
+          </dl>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section section--soft" aria-labelledby="privacy-title">
+      <div class="container">
+        <div class="safety-notice">
+          <div class="safety-notice__mark" aria-hidden="true">!</div>
+          <div>
+            <h2 id="privacy-title">個人情報を入力しないでください</h2>
+            <p>この試作ページでは、児童名、学校名、学級名、実際の所見文、その他個人を特定できる情報を入力・送信する機能は設けていません。今後の実験でも、個人情報を扱わないことを前提に設計します。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="seed-title">
+      <div class="container lab-split">
+        <div>
+          <div class="lab-section-heading">
+            <p class="eyebrow">The seed</p>
+            <h2 id="seed-title">困りごとのタネ</h2>
+          </div>
+          <div class="lab-note-box">
+            <h3>「所見づくりを、もう少し進めやすくできないかな」</h3>
+            <p>職員室では、所見を書く時間や、子どもの姿を言葉にする難しさが話題になることがあります。個人や学校が特定されない形で、その困りごとを実験の出発点として整理しています。</p>
+          </div>
+        </div>
+
+        <div>
+          <div class="lab-section-heading">
+            <p class="eyebrow">Our principle</p>
+            <h2>この実験で大切にすること</h2>
+          </div>
+          <ul class="lab-checklist">
+            <li>先生自身が子どもの姿を振り返ることを中心にする</li>
+            <li>機械が作った文章をそのまま使う仕組みにしない</li>
+            <li>個人情報を入力しない設計にする</li>
+            <li>便利さだけでなく、言葉を選ぶ過程を大切にする</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--soft" id="journey" aria-labelledby="journey-title">
+      <div class="container">
+        <div class="lab-section-heading">
+          <p class="eyebrow">Experiment journey</p>
+          <h2 id="journey-title">この実験の現在地</h2>
+          <p>現在は「試作中」です。実際の画面や利用者テストは、まだ始めていません。</p>
+        </div>
+        <ol class="lab-journey">
+          <li><span class="lab-journey__number">01</span><h3>タネ</h3><p>所見づくりの時間と言葉選びの難しさを整理しました。</p></li>
+          <li aria-current="step"><span class="lab-journey__number">02</span><h3>試作中</h3><p>目的、安全条件、必要になりそうな考え方を整理しています。</p></li>
+          <li><span class="lab-journey__number">03</span><h3>実験中</h3><p>まだ実施していません。</p></li>
+          <li><span class="lab-journey__number">04</span><h3>公開</h3><p>公開方法を含めて未定です。</p></li>
+          <li><span class="lab-journey__number">05</span><h3>改善中</h3><p>利用者の声はまだ集めていません。</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="prototype-title">
+      <div class="container">
+        <div class="lab-section-heading">
+          <p class="eyebrow">Current prototype</p>
+          <h2 id="prototype-title">現在の試作品</h2>
+          <p>決まっていることと、これから検討することを分けて表示します。</p>
+        </div>
+
+        <div class="decision-grid">
+          <article class="decision-panel">
+            <h3>現在決まっていること</h3>
+            <ul>
+              <li>先生が子どもの姿を振り返る過程を支える実験であること</li>
+              <li>児童名などの個人情報を入力しない設計にすること</li>
+              <li>現在は非公開の試作段階であること</li>
+              <li>利用した先生の声を掲載する場合は、許可と匿名化を前提にすること</li>
+            </ul>
+          </article>
+
+          <article class="decision-panel decision-panel--pending">
+            <h3>現在準備中・検討中のこと</h3>
+            <ul>
+              <li>試作品の画面と具体的な操作方法</li>
+              <li>文章の長さや表現を整理する方法</li>
+              <li>実際に試す範囲と確認手順</li>
+              <li>公開方法とバージョン更新の方法</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="prototype-placeholder" aria-label="試作品の画面は準備中です">
+          <div class="prototype-placeholder__inner">
+            <p class="prototype-placeholder__label">Prototype preparing</p>
+            <h3>試作品の画面は、まだありません。</h3>
+            <p>架空の完成画面は掲載せず、実際に試せる形ができてから、できることと注意点をここに追加します。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--cream" aria-labelledby="next-title">
+      <div class="container lab-split">
+        <div>
+          <div class="lab-section-heading">
+            <p class="eyebrow">Next questions</p>
+            <h2 id="next-title">次に確かめたいこと</h2>
+          </div>
+          <ul class="lab-checklist">
+            <li>先生が考える時間を奪わず、整理を助ける形になっているか</li>
+            <li>文章の長さや表現を無理なく選べるか</li>
+            <li>個人情報を扱わずに試せる設計になっているか</li>
+          </ul>
+        </div>
+
+        <aside class="lab-note-box" aria-labelledby="materials-policy-title">
+          <h3 id="materials-policy-title">安全・資料利用の方針</h3>
+          <p>教科書や指導資料、出版社の冊子・Webサイトなどを参考にする場合も、文章・設問・図表などをそのまま転載・再配布しません。授業づくりや観点整理、機能設計の参考として適切に扱い、必要に応じて出典や利用条件を確認します。現段階では、具体的な文章・紙面・画像・資料は掲載していません。</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="voices-title">
+      <div class="container">
+        <div class="lab-section-heading">
+          <p class="eyebrow">Teachers’ voices</p>
+          <h2 id="voices-title">利用した先生からの声</h2>
+          <p>利用者テストをまだ行っていないため、現在掲載できる声はありません。架空の感想は作らず、実際に届いた声だけを、許可を得て匿名で紹介します。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--soft" aria-labelledby="participation-title">
+      <div class="container">
+        <div class="participation-panel">
+          <div class="participation-panel__copy">
+            <p class="eyebrow">Experiment post</p>
+            <h2 id="participation-title">実験室ポスト</h2>
+            <p>困りごとのタネ、試してみた感想、改善アイデアを受け取る入口として準備しています。フォームが完成するまでは送信できません。</p>
+            <p>フォーム開設後も、児童名、学校名、学級名、実際の所見文などは送らないよう案内します。</p>
+          </div>
+          <span class="participation-pending">参加フォーム準備中</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="update-history-title">
+      <div class="container">
+        <div class="lab-section-heading">
+          <p class="eyebrow">Update history</p>
+          <h2 id="update-history-title">更新履歴</h2>
+          <p>この実験ページで変更した内容を、ここへ順に追記していきます。</p>
+        </div>
+        <ul class="experiment-list">
+          <li><time datetime="2026-07-31">2026-07-31</time><span class="experiment-type experiment-type--lab">Ver.0.1</span><p>更新履歴を追加し、今後の変更内容を追記できる形にしました。</p></li>
+          <li><time datetime="2026-07-30">2026-07-30</time><span class="experiment-type experiment-type--lab">Ver.0.1</span><p>目的、安全条件、資料利用の方針、準備中の内容を整理した非公開試作ページを作成しました。</p></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__grid">
+        <div class="flow"><h2>先生のちいさなアプリ実験室</h2><p class="site-footer__brand-copy">教室から、ひとつずつ。</p><p>教室と職員室から生まれたアイデアを、ちいさく試し、育てています。</p></div>
+        <div><h3>5つの入口</h3><ul class="site-footer__links"><li><a href="../../apps/index.html">アプリ</a></li><li><a href="../../materials/index.html">教材</a></li><li><a href="../../notes/index.html">ノート</a></li><li><a href="../../essays/index.html">エッセイ</a></li><li><a href="../../labs/index.html">実験室</a></li></ul></div>
+        <div><h3>ご案内</h3><ul class="site-footer__links"><li><a href="../../profile/index.html">プロフィール</a></li><li><a href="../../contact/index.html">お問い合わせ</a></li><li><a href="../../privacy/index.html">プライバシー</a></li></ul></div>
+      </div>
+      <p class="site-footer__bottom">© <span data-current-year>2026</span> 先生のちいさなアプリ実験室　※現在は試作公開中です。</p>
+    </div>
+  </footer>
+</body>
+</html>
