@@ -96,7 +96,7 @@
 
       const description = document.createElement("p");
       description.className = "site-footer__external-note";
-      description.textContent = "各サービスは公開に向けて準備中です。";
+      description.textContent = "Instagram・YouTubeで、ちいラボの実践を紹介しています。";
 
       const links = document.createElement("div");
       links.dataset.siteLinks = "footer";
