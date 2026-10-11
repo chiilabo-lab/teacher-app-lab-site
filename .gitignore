@@ -29,3 +29,7 @@ temp/
 *.tmp
 Thumbs.db
 .DS_Store
+
+# Complete teaching materials stay private; verified short videos use assets/samples/.
+assets/materials/
+*.mp3
