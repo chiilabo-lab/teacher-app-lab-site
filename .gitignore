@@ -33,3 +33,7 @@ Thumbs.db
 # Complete teaching materials stay private; verified short videos use assets/samples/.
 assets/materials/
 *.mp3
+
+# 公開承認後に掲載する自分人形の配布用コピー2点だけを例外にする
+!assets/downloads/self-doll/self-doll-no-hat.pdf
+!assets/downloads/self-doll/speech-bubbles-blank.pdf

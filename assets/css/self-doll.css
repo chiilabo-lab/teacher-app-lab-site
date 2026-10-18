@@ -1,0 +1,54 @@
+/* Article additions only. The production site's CSS is preserved in the other files. */
+.doll-subtitle { font-weight:700; }
+.doll-figure { margin:2rem 0; }
+.doll-figure > a { display:block; border:1px solid var(--color-line); border-radius:var(--radius-sm); overflow:hidden; background:#fff; }
+.doll-figure img { width:100%; height:auto; }
+.doll-figure figcaption { margin-top:.65rem; color:var(--color-muted); font-size:.82rem; line-height:1.8; }
+.doll-figure__hint { display:block; color:var(--color-sky-700); font-size:.78rem; }
+.doll-materials > * + * { margin-top:1rem; }
+.doll-materials h2 { font-size:1.3rem; }
+.doll-downloads { display:grid; gap:.8rem; margin-top:1.4rem; padding-top:1.2rem; border-top:1px solid var(--color-line); }
+.doll-downloads__label { color:var(--color-ink); font-weight:700; }
+.doll-downloads .button { justify-content:space-between; text-align:left; padding:.95rem 1.1rem; border-radius:var(--radius-md); line-height:1.6; }
+.doll-downloads small { display:block; margin-top:.2rem; font-size:.76rem; font-weight:400; }
+.doll-file-label { flex:none; font-size:.8rem; }
+.doll-downloads__notice { font-size:.78rem; line-height:1.8; }
+@media (max-width:600px) {
+  .doll-downloads .button { gap:.7rem; padding:.8rem .9rem; font-size:.87rem; }
+}
+@media print {
+  .site-header,.site-footer,.breadcrumbs,.doll-downloads,.note-related,.essay-article__footer { display:none; }
+  body,.essay-article-hero,.essay-article-section { background:#fff; }
+  .essay-reading-width { width:100%; max-width:760px; }
+  .essay-article { box-shadow:none; border:0; padding:0; }
+  .essay-article-hero { padding:1rem 0 2rem; }
+  .essay-article-section { padding:2rem 0; }
+  .doll-figure { break-inside:avoid; }
+}
+
+/* Reading rhythm: a small number of strong points, with the existing brand colors. */
+.doll-title-focus { background:linear-gradient(transparent 76%,var(--color-yellow-100) 76%); padding-inline:.06em; }
+.doll-subtitle { font-size:clamp(1.1rem,2.3vw,1.3rem); line-height:1.8; }
+.essay-article__body { line-height:2; }
+.essay-article__body strong { color:var(--color-ink); font-weight:700; }
+.essay-article__body .doll-section-heading { margin:3.8rem 0 1.8rem; padding:1.2rem 1.45rem 1.35rem; border-left:5px solid var(--color-sky-400); border-radius:0 var(--radius-md) var(--radius-md) 0; background:var(--color-sky-50); }
+.essay-article__body .doll-section-heading--life { border-left-color:var(--color-yellow-300); background:var(--color-cream); }
+.doll-section-label { margin:0 0 .45rem; color:var(--color-sky-700); font-size:1rem; font-weight:700; letter-spacing:.08em; }
+.essay-article__body .doll-section-heading h2 { margin:0; padding:0; border:0; font-size:clamp(1.55rem,3vw,2rem); line-height:1.5; letter-spacing:.02em; }
+.essay-article__body .doll-keyline { margin-block:1.9rem; padding:1.15rem 1.3rem; border-radius:var(--radius-sm); font-size:1.08em; line-height:1.85; }
+.doll-keyline--sky { background:var(--color-sky-50); border-left:3px solid var(--color-sky-400); }
+.doll-keyline--yellow { background:var(--color-cream); border-left:3px solid var(--color-yellow-300); }
+.essay-article__body .doll-example { margin-block:1.8rem; padding:1.25rem 1.35rem; border:1px solid var(--color-line); border-radius:var(--radius-md); background:#fbfcfd; }
+.doll-example__label { color:var(--color-sky-700); font-size:.84rem; font-weight:700; letter-spacing:.05em; }
+.doll-example p + p { margin-top:1rem; }
+.essay-article__body .doll-figure { width:calc(100% + 3rem); margin:2.5rem -1.5rem; }
+.doll-figure figcaption { padding-inline:.35rem; }
+.doll-materials { border-top:4px solid var(--color-sky-200); }
+@media (max-width:600px) {
+ .essay-article__body .doll-section-heading { margin-block:2.8rem 1.4rem; padding:1rem 1.05rem; }
+ .essay-article__body .doll-section-heading h2 { font-size:1.5rem; }
+ .essay-article__body .doll-keyline { margin-block:1.6rem; padding:1rem; }
+ .essay-article__body .doll-example { padding:1rem; }
+ .essay-article__body .doll-figure { width:calc(100% + 1.5rem); margin:2rem -.75rem; }
+}
+@media print { .doll-section-heading { break-after:avoid; } .doll-keyline,.doll-example { break-inside:avoid; } }

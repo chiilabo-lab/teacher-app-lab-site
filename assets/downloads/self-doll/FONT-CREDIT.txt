@@ -1,0 +1,9 @@
+自分人形PDFの使用フォント
+
+BIZ UDGothic Bold Version 1.051
+Copyright 2022 The BIZ UDGothic Project Authors
+SIL Open Font License Version 1.1（同じフォルダーのOFL.txt）
+公式配布元：https://github.com/googlefonts/morisawa-biz-ud-gothic
+
+このライセンスはPDFに使用したフォントについてのものです。
+教材本文・型紙全体の利用条件は、記事の「型紙について」を参照してください。
