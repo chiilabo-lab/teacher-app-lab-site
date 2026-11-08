@@ -477,15 +477,15 @@
 
     .message {
       min-height: 56px;
-      display: grid;
-      place-items: center;
+      display: block;
       padding: 10px;
       border-radius: 8px;
       background: #fffdf3;
       border: 3px solid #e6d597;
       font-size: clamp(18px, 2.7vw, 28px);
       font-weight: 900;
-      text-align: center;
+      text-align: left;
+      line-height: 1.5;
     }
 
     footer {
@@ -1080,52 +1080,65 @@
       const finish = () => {
         if (playbackId === voicePlaybackId && typeof onComplete === "function") onComplete();
       };
-      const fallback = () => {
-        if (playbackId !== voicePlaybackId) return;
-        if (!playRecordedElements(finish)) {
-          message.textContent = "こえを再生できません。もう一度ためしてね。";
-          finish();
-        }
-      };
-      if (!canUseWebAudio) { fallback(); return; }
-      (async () => {
-        const context = getAudioContext();
-        await context.resume();
-        const buffers = await loadCheerBuffers(context);
-        if (playbackId !== voicePlaybackId) return;
-        const source = context.createBufferSource();
-        source.buffer = buffers[0];
-        // Approved six-speaker recording: preserve its pitch, pace and intonation.
-        source.playbackRate.value = 1;
-        source.connect(context.destination);
-        activeCheerSources.push(source);
-        source.onended = () => {
-          activeCheerSources = activeCheerSources.filter(active => active !== source);
-          finish();
-        };
-        source.start();
-      })().catch(fallback);
-    }
-
-    function playRecordedElements(onComplete) {
-      if (!canPlayRecordedVoice) return false;
-      const playbackId = voicePlaybackId;
-      const audio = new Audio(cheerAudioSources[0]);
-      audio.volume = 1;
-      audio.playbackRate = 1;
-      activeCheerAudios.push(audio);
-      const finish = () => {
-        activeCheerAudios = activeCheerAudios.filter(active => active !== audio);
-        if (playbackId === voicePlaybackId && typeof onComplete === "function") onComplete();
-      };
-      audio.onended = finish;
-      audio.onerror = () => {
+      const failed = () => {
         if (playbackId !== voicePlaybackId) return;
         message.textContent = "こえを再生できません。もう一度ためしてね。";
         finish();
       };
-      const promise = audio.play();
-      if (promise) promise.catch(audio.onerror);
+      const playWithWebAudio = () => {
+        if (playbackId !== voicePlaybackId) return;
+        if (!canUseWebAudio) { failed(); return; }
+        (async () => {
+          const context = getAudioContext();
+          await context.resume();
+          const buffers = await loadCheerBuffers(context);
+          if (playbackId !== voicePlaybackId) return;
+          const source = context.createBufferSource();
+          source.buffer = buffers[0];
+          source.playbackRate.value = 1;
+          source.connect(context.destination);
+          activeCheerSources.push(source);
+          source.onended = () => {
+            activeCheerSources = activeCheerSources.filter(active => active !== source);
+            finish();
+          };
+          source.start();
+        })().catch(failed);
+      };
+      // Prefer ordinary media-file playback, with the unchanged approved recording.
+      // Web Audio remains a fallback for browsers that cannot play the WAV directly.
+      if (!playRecordedElements(finish, playWithWebAudio)) playWithWebAudio();
+    }
+
+    function playRecordedElements(onComplete, onFailure) {
+      if (!canPlayRecordedVoice) return false;
+      const playbackId = voicePlaybackId;
+      const audio = new Audio(cheerAudioSources[0]);
+      audio.volume = 1;
+      audio.muted = false;
+      audio.playbackRate = 1;
+      activeCheerAudios.push(audio);
+      let settled = false;
+      const cleanup = () => {
+        activeCheerAudios = activeCheerAudios.filter(active => active !== audio);
+      };
+      audio.onended = () => {
+        if (settled) return;
+        settled = true;
+        cleanup();
+        if (playbackId === voicePlaybackId && typeof onComplete === "function") onComplete();
+      };
+      audio.onerror = () => {
+        if (settled) return;
+        settled = true;
+        audio.pause();
+        cleanup();
+        if (playbackId === voicePlaybackId && typeof onFailure === "function") onFailure();
+      };
+      try {
+        const promise = audio.play();
+        if (promise) promise.catch(audio.onerror);
+      } catch (error) { audio.onerror(); }
       return true;
     }
 
