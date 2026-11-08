@@ -62,6 +62,14 @@
             <li>「できたかな？」で確かめます。</li>
           </ol>
           <p><a class="button button--primary" href="index.html">改良したアプリを使ってみる →</a></p>
+
+          <section aria-labelledby="kabu-direct-link-title" style="margin-block:1.5rem;padding:1rem;border:2px solid #7da98a;border-radius:12px;background:#fff;">
+            <h3 id="kabu-direct-link-title">アプリのリンクをコピーして使う</h3>
+            <p>下のURLをChromeなどのブラウザーで開くと、アプリを直接使えます。Classroomなどにリンクを貼って共有するときも、このURLをお使いください。</p>
+            <p><a id="kabu-direct-url" href="https://chiilabo-lab.github.io/teacher-app-lab-site/apps/ookinakabu/" style="overflow-wrap:anywhere;word-break:break-word;">https://chiilabo-lab.github.io/teacher-app-lab-site/apps/ookinakabu/</a></p>
+            <button class="button" id="kabu-copy-url" type="button">アプリのURLをコピー</button>
+            <p id="kabu-copy-status" role="status" aria-live="polite" style="margin-bottom:0;">ボタンでコピーできない場合は、URLを長押しするか、文字を選択してコピーしてください。</p>
+          </section>
           <p>アプリのリンクを共有して、それぞれの端末のブラウザーで使えます。音の聞こえ方は端末や接続先によって異なりますので、授業前にお使いの環境でお試しください。</p>
           <p><small>以下の紹介動画と使い方は、改良前の記録として残しています。「こえをきく」ボタンは、改良版では「ヒントをみる」に替わりました。</small></p>
         </article>
@@ -111,5 +119,26 @@
       <p class="site-footer__bottom">© <span data-current-year>2026</span> 先生のちいさなアプリ実験室　※現在は試作公開中です。</p>
     </div>
   </footer>
+
+<script>
+(function () {
+  var button = document.getElementById("kabu-copy-url");
+  var link = document.getElementById("kabu-direct-url");
+  var status = document.getElementById("kabu-copy-status");
+  button.addEventListener("click", async function () {
+    try {
+      if (!navigator.clipboard || !navigator.clipboard.writeText) throw new Error("Clipboard unavailable");
+      await navigator.clipboard.writeText(link.href);
+      status.textContent = "アプリのURLをコピーしました。Chromeのアドレス欄や、共有したい場所に貼り付けてください。";
+    } catch (error) {
+      var range = document.createRange();
+      range.selectNodeContents(link);
+      var selection = window.getSelection();
+      if (selection) { selection.removeAllRanges(); selection.addRange(range); }
+      status.textContent = "URLを選択しました。コピーを選ぶか、パソコンでは Ctrl+C（Macでは ⌘C）でコピーしてください。";
+    }
+  });
+})();
+</script>
 </body>
 </html>
