@@ -796,6 +796,7 @@
           const peak = (options.gain || 0.15) * successBoost;
           gain.gain.setValueAtTime(0.0001, start + at);
           gain.gain.exponentialRampToValueAtTime(peak, start + at + 0.02);
+          if (options.hold) gain.gain.setValueAtTime(peak, start + at + options.hold);
           if (isSuccess) {
             // Keep the audible body of the sound; the former envelope faded immediately.
             gain.gain.setValueAtTime(peak, start + at + dur * 0.65);
@@ -806,9 +807,9 @@
           osc.stop(start + at + dur + 0.05);
         };
         if (kind === "select") {
-          note(660, 0, 0.09, { slide: 990, gain: 0.1 });
+          note(660, 0, 0.12, { slide: 880, gain: 0.16, hold: 0.06 });
         } else if (kind === "move") {
-          note(480, 0, 0.07, { gain: 0.07 });
+          note(600, 0, 0.12, { gain: 0.14, hold: 0.06 });
         } else if (kind === "wrong") {
           note(330, 0, 0.18, { wave: "sine", gain: 0.12 });
           note(262, 0.2, 0.26, { wave: "sine", gain: 0.12 });
@@ -1097,7 +1098,7 @@
           source.buffer = buffers[0];
           source.playbackRate.value = 1;
           const voiceGain = context.createGain();
-          voiceGain.gain.value = 0.85;
+          voiceGain.gain.value = 0.6;
           source.connect(voiceGain);
           voiceGain.connect(context.destination);
           activeCheerSources.push(source);
@@ -1118,7 +1119,7 @@
       if (!canPlayRecordedVoice) return false;
       const playbackId = voicePlaybackId;
       const audio = new Audio(cheerAudioSources[0]);
-      audio.volume = 0.85;
+      audio.volume = 0.6;
       audio.muted = false;
       audio.playbackRate = 1;
       activeCheerAudios.push(audio);
