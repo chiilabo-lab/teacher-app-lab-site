@@ -1096,10 +1096,14 @@
           const source = context.createBufferSource();
           source.buffer = buffers[0];
           source.playbackRate.value = 1;
-          source.connect(context.destination);
+          const voiceGain = context.createGain();
+          voiceGain.gain.value = 0.85;
+          source.connect(voiceGain);
+          voiceGain.connect(context.destination);
           activeCheerSources.push(source);
           source.onended = () => {
             activeCheerSources = activeCheerSources.filter(active => active !== source);
+            voiceGain.disconnect();
             finish();
           };
           source.start();
@@ -1114,7 +1118,7 @@
       if (!canPlayRecordedVoice) return false;
       const playbackId = voicePlaybackId;
       const audio = new Audio(cheerAudioSources[0]);
-      audio.volume = 1;
+      audio.volume = 0.85;
       audio.muted = false;
       audio.playbackRate = 1;
       activeCheerAudios.push(audio);
