@@ -324,6 +324,14 @@
       border-bottom: 3px solid #dc9d27;
     }
 
+    .speech.retry {
+      background: #eaf3ff;
+      color: #234a73;
+      font-size: clamp(23px, 4vw, 32px);
+      line-height: 1.35;
+      border-bottom: 3px solid #84a8ca;
+    }
+
     .work-area {
       margin-bottom: 12px;
       display: grid;
@@ -738,7 +746,7 @@
       }
       lastHint = hintBag.pop();
       activeHint = "ヒント：" + hints[lastHint];
-      sceneSpeech.classList.remove("success");
+      sceneSpeech.classList.remove("success", "retry");
       sceneSpeech.textContent = activeHint;
     }
     const cheerAudioSources = [
@@ -760,6 +768,22 @@
         const context = getAudioContext();
         context.resume();
         const start = context.currentTime;
+        const isSuccess = kind === "pop" || kind === "fanfare";
+        let output = context.destination;
+        if (isSuccess) {
+          // A common bounded output controls summed notes, not each note in isolation.
+          const limiter = context.createWaveShaper();
+          const curve = new Float32Array(4097);
+          for (let i = 0; i < curve.length; i += 1) {
+            const x = i * 2 / (curve.length - 1) - 1;
+            curve[i] = 0.9 * Math.tanh(2 * x);
+          }
+          limiter.curve = curve;
+          limiter.oversample = "4x";
+          limiter.connect(context.destination);
+          output = limiter;
+          window.setTimeout(() => limiter.disconnect(), 2200);
+        }
         const note = (freq, at, dur, options = {}) => {
           const osc = context.createOscillator();
           const gain = context.createGain();
@@ -768,12 +792,16 @@
           if (options.slide) {
             osc.frequency.exponentialRampToValueAtTime(options.slide, start + at + dur);
           }
-          const successBoost = kind === "pop" || kind === "fanfare" ? 2.7 : 1;
+          const successBoost = kind === "pop" ? 3.4 : kind === "fanfare" ? 3.8 : 1;
           const peak = (options.gain || 0.15) * successBoost;
           gain.gain.setValueAtTime(0.0001, start + at);
           gain.gain.exponentialRampToValueAtTime(peak, start + at + 0.02);
+          if (isSuccess) {
+            // Keep the audible body of the sound; the former envelope faded immediately.
+            gain.gain.setValueAtTime(peak, start + at + dur * 0.65);
+          }
           gain.gain.exponentialRampToValueAtTime(0.0001, start + at + dur);
-          osc.connect(gain).connect(context.destination);
+          osc.connect(gain).connect(output);
           osc.start(start + at);
           osc.stop(start + at + dur + 0.05);
         };
@@ -1131,8 +1159,11 @@
       if (!canSpeak) return;
       stopAllVoice();
       const preferredVoice = getPreferredJapaneseVoice();
+      const countReadings = ["れいこ", "いっこ", "にこ", "さんこ", "よんこ", "ごこ"];
+      const countReading = countReadings[score];
+      if (!countReading) return;
       const utterance = new SpeechSynthesisUtterance(
-        `ざんねんっ。${score}こ あっています。おはなしを、よく、よみましょう。`
+        `ざんねんっ。${countReading} あっています。おはなしを、よく、よみましょう。`
       );
       utterance.lang = "ja-JP";
       utterance.pitch = 1.32;
@@ -1182,7 +1213,7 @@
       celebrationTimers = [];
       stage.classList.remove("celebrate", "popped");
       sceneSpeech.textContent = activeHint || cheerText;
-      sceneSpeech.classList.remove("success");
+      sceneSpeech.classList.remove("success", "retry");
       hintButton.disabled = false;
       showPullers();
       confettiLayer.innerHTML = "";
@@ -1214,6 +1245,7 @@
       if (score === correctOrder.length) {
         // Give feedback synchronously, before audio loading or the pull animation.
         sceneSpeech.textContent = "せいかい！";
+        sceneSpeech.classList.remove("retry");
         sceneSpeech.classList.add("success");
         stage.classList.add("celebrate");
         showPullers();
@@ -1232,8 +1264,11 @@
         });
       } else {
         stage.classList.remove("celebrate");
+        sceneSpeech.textContent = `ざんねん！ ${score}こ あっています。`;
+        sceneSpeech.classList.remove("success");
+        sceneSpeech.classList.add("retry");
         playSfx("wrong");
-        message.textContent = `ざんねん！${score}こ あっています。おはなしを　よく　よみましょう！`;
+        message.textContent = "おはなしを よく よんで、もういちど ならべてみよう！";
         speakTryAgain(score);
       }
     }
