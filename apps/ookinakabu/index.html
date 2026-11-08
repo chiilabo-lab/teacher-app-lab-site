@@ -647,16 +647,14 @@
         width: 100%;
       }
     }
+    .tool-button { white-space: nowrap; min-width: max-content; }
+    .cheer-phrase { display: inline-block; white-space: nowrap; }
+    .teacher-menu { margin: 18px auto 0; max-width: 1180px; text-align: left; }
+    .teacher-menu summary { cursor: pointer; padding: 12px; min-height: 44px; }
+    .teacher-menu .lab-site-bar { box-shadow: none; border: 1px solid var(--line); border-radius: 8px; }
   </style>
 </head>
 <body>
-  <nav class="lab-site-bar" aria-label="サイトへ戻る">
-    <a class="lab-site-bar__brand" href="../../index.html">
-      <span class="lab-site-bar__mark" aria-hidden="true">🐼</span>
-      <span>先生のちいさなアプリ実験室</span>
-    </a>
-    <a class="lab-site-bar__back" href="../index.html">← アプリ一覧へ戻る</a>
-  </nav>
   <div class="app">
     <header>
       <div class="title-row">
@@ -673,7 +671,7 @@
     </header>
 
     <main>
-      <div class="speech" id="sceneSpeech" role="status" aria-live="polite">うんとこしょ、どっこいしょ。</div>
+      <div class="speech" id="sceneSpeech" role="status" aria-live="polite"><span class="cheer-phrase">うんとこしょ、</span><span class="cheer-phrase">どっこいしょ。</span></div>
       <section class="stage" id="stage" aria-label="おおきなかぶのばめん">
         <div class="rope" aria-hidden="true"></div>
         <div class="turnip-wrap" id="turnipWrap" aria-hidden="true">
@@ -704,6 +702,16 @@
 
     <footer>おはなしのじゅんばんを、よくかんがえてならべましょう。
       <div class="voice-credit">音声：VOICEVOX:ずんだもん／VOICEVOX:中国うさぎ／VOICEVOX:東北きりたん／VOICEVOX:四国めたん／VOICEVOX:東北ずん子／VOICEVOX:九州そら</div>
+      <details class="teacher-menu">
+        <summary>先生用メニュー</summary>
+  <nav class="lab-site-bar" aria-label="サイトへ戻る">
+    <a class="lab-site-bar__brand" href="../../index.html">
+      <span class="lab-site-bar__mark" aria-hidden="true">🐼</span>
+      <span>先生のちいさなアプリ実験室</span>
+    </a>
+    <a class="lab-site-bar__back" href="../index.html">← アプリ一覧へ戻る</a>
+  </nav>
+      </details>
     </footer>
   </div>
 
@@ -1313,6 +1321,7 @@
       celebrationTimers = [];
       stage.classList.remove("celebrate", "popped");
       sceneSpeech.textContent = activeHint || cheerText;
+      if (!activeHint) sceneSpeech.innerHTML = '<span class="cheer-phrase">うんとこしょ、</span><span class="cheer-phrase">どっこいしょ。</span>';
       sceneSpeech.classList.remove("success", "retry");
       hintButton.disabled = false;
       showPullers();
@@ -1422,4 +1431,5 @@
   </script>
 </body>
 </html>
+
 
